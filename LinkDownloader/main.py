@@ -15,7 +15,7 @@ import tkinter as tk
 import pyautogui
 import requests
 import os
-
+#
 AppName = 'LinkDownloader'
 
 class Ui_Form(object):
