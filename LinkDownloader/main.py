@@ -46,7 +46,7 @@ class Ui_Form(object):
         self.label.setObjectName("label")
         self.progressBar = QtWidgets.QProgressBar(Form)
         self.progressBar.setGeometry(QtCore.QRect(130, 200, 491, 31))
-        self.progressBar.setProperty("value", 5)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(10, 80, 121, 41))
@@ -97,7 +97,7 @@ class Ui_Form(object):
                 file.write(data)
                 size_downloaded += len(data)
                 print('\r已下载{:.1f}MB {:.4f}%'.format(size_downloaded/1024/1024,size_downloaded/content_length*100),end='')
-                self.progressBar.setValue(size_downloaded/content_length*100)
+                self.progressBar.setValue(int(size_downloaded/content_length*100))
 
     def StartDownload(self, ):
         global response,content_length
